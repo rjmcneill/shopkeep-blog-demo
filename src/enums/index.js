@@ -1,0 +1,7 @@
+
+const DATA = {
+  GENERATE: 'DATA_GENERATE',
+  UPDATE_TAX_RATE: 'DATA_UPDATE_TAX_RATE'
+};
+
+export default DATA;
