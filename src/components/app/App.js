@@ -14,7 +14,7 @@ class App extends React.Component {
 
   componentDidUpdate() {
     const renderTime = performance.now() - this.startTime;
-    console.log(`Render Time: ${renderTime.toFixed(0)}ms\n`);
+    console.log(`Render Time: ${renderTime.toFixed(0)}ms\n\n`);
   }
 
   onGenerateSubmit(e) {

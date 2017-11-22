@@ -1,13 +1,19 @@
+import { createSelector } from 'reselect';
+import getItemsWithTotals from './getItemsWithTotals';
 
-function getTotalCost(itemsWithTotals) {
-  const startTime = performance.now();
 
-  const totalCost = itemsWithTotals.reduce((totalCostSum, item) => totalCostSum + item.total, 0);
+const getTotalCost = createSelector(
+  getItemsWithTotals,
+  (itemsWithTotals) => {
+    const startTime = performance.now();
 
-  const timeTaken = performance.now() - startTime;
-  console.log(`Total Cost Computation Time: ${timeTaken.toFixed(0)}ms`);
+    const totalCost = itemsWithTotals.reduce((totalCostSum, item) => totalCostSum + item.total, 0);
 
-  return totalCost;
-}
+    const timeTaken = performance.now() - startTime;
+    console.log(`Total Cost Computation Time: ${timeTaken.toFixed(0)}ms`);
+
+    return totalCost;
+  }
+);
 
 export default getTotalCost;

@@ -9,7 +9,7 @@ import getTotalCost from '../../../selectors/getTotalCost';
 
 const mapStateToProps = (state) => {
   const itemsWithTotals = getItemsWithTotals(state);
-  const totalCost = getTotalCost(itemsWithTotals);
+  const totalCost = getTotalCost(state);
   const tax = state.list.taxRate;
   const totalCostWithTax = totalCost * tax;
 
